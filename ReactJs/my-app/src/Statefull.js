@@ -32,7 +32,7 @@ class Statefull extends React.Component{
                 <Header/>
                 <table>
                     <tbody>
-                        {this.state.data.map((i,person)=><TableRow key = {i} data = {person}/>)}
+                        {this.state.data.map((i,person)=><TableRow key = {i} data = {person}/>)} 
                     </tbody>
                 </table>
             </div>
@@ -54,12 +54,14 @@ class Header extends React.Component{
 
 class TableRow extends React.Component{
     render(){
-        return(
+        return (
             <tr>
-                <td>{this.props.state.data.id}</td>
-                <td>{this.props.state.data.name}</td>
-                <td>{this.props.state.data.age}</td>
+               <td>{this.props.data.id}</td>
+               <td>{this.props.data.name}</td>
+               <td>{this.props.data.age}</td>
             </tr>
-        );
+         );
     }
 }
+
+export default Statefull;

@@ -3,7 +3,7 @@ import React from "react";
 function Stateless() {
     return (
       <div className="Stateless">
-        <Headers/>
+        <Header/>
         <Content/>
       </div>
     );

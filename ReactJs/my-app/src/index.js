@@ -8,13 +8,14 @@ import './index.css';
 //import StateProps from './StateProps';
 //import ComponentCircle from './ComponentCircle';
 //import ComponentApiSetState from './ComponentApiSetState';
-import ComponentApiForceUpdate from './ComponentApiForceUpdate';
+//import ComponentApiForceUpdate from './ComponentApiForceUpdate';
+import ComponentApiFindDOMNode from './ComponentApiFindDOMNode';
 
 import reportWebVitals from './reportWebVitals';
 
 ReactDOM.render(
   <React.StrictMode>
-   <ComponentApiForceUpdate />
+   <ComponentApiFindDOMNode />
   </React.StrictMode>,
   document.getElementById('root')
 );

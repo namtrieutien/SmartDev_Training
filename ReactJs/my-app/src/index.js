@@ -7,13 +7,14 @@ import './index.css';
 //import State from './State';
 //import StateProps from './StateProps';
 //import ComponentCircle from './ComponentCircle';
-import ComponentApiSetState from './ComponentApiSetState';
+//import ComponentApiSetState from './ComponentApiSetState';
+import ComponentApiForceUpdate from './ComponentApiForceUpdate';
 
 import reportWebVitals from './reportWebVitals';
 
 ReactDOM.render(
   <React.StrictMode>
-   <ComponentApiSetState />
+   <ComponentApiForceUpdate />
   </React.StrictMode>,
   document.getElementById('root')
 );

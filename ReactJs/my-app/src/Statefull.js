@@ -1,67 +1,64 @@
-import { render } from "@testing-library/react"
 import React from "react";
 
-class Statefull extends React.Component{
-    constructor(){
-        super();
-        this.state = {
-            data:
-            [
-                {
-                    'id': 1,
-                    'name': "John",
-                    'age': 13
-                },
-                {
-                    'id': 2,
-                    'name': "Mary",
-                    'age': 24
-                },
-                {
-                    'id': 3,
-                    'name': "Henry",
-                    'age': 30
-                }
-            ]
-        }
+
+class Statefull extends React.Component {
+    constructor() {
+       super();
+       this.state = {
+          data: 
+          [
+             {
+                "id":1,
+                "name":"Foo",
+                "age":"20"
+             },
+             {
+                "id":2,
+                "name":"Bar",
+                "age":"30"
+             },
+             {
+                "id":3,
+                "name":"Baz",
+                "age":"40"
+             }
+          ]
+       }
     }
-
-    render(){
-        return(
-            <div>
-                <Header/>
-                <table>
-                    <tbody>
-                        {this.state.data.map((i,person)=><TableRow key = {i} data = {person}/>)} 
-                    </tbody>
-                </table>
-            </div>
-
-        );
+    render() {
+       return (
+          <div>
+             <Header/>
+             <table>
+                <tbody>
+                   {this.state.data.map((person, i) => <TableRow  
+                      person = {person} i = {i} />)}
+                </tbody>
+             </table>
+          </div>
+       );
     }
+ }
 
-}
-
-class Header extends React.Component{
-    render(){
-        return(
-            <div>
-                Header
-            </div>
-        );
+ class Header extends React.Component {
+    render() {
+       return (
+          <div>
+             <h1>Header</h1>
+          </div>
+       );
     }
-}
+ }
 
-class TableRow extends React.Component{
-    render(){
-        return (
-            <tr>
-               <td>{this.props.data.id}</td>
-               <td>{this.props.data.name}</td>
-               <td>{this.props.data.age}</td>
-            </tr>
-         );
+ class TableRow extends React.Component {
+    render() {
+       return (
+          <tr>
+             <td>{this.props.i} {this.props.person.id} </td>
+             <td>{this.props.person.name}</td>
+             <td>{this.props.person.age}</td>
+          </tr>
+       );
     }
-}
-
-export default Statefull;
+ }
+ export default Statefull;

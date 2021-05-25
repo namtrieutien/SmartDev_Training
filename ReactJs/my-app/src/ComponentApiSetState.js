@@ -1,6 +1,6 @@
 import React from 'react';
 
-class ComponentApi extends React.Component {
+class ComponentApiSetState extends React.Component {
    constructor() {
       super();
       
@@ -25,4 +25,4 @@ class ComponentApi extends React.Component {
       );
    }
 }
-export default ComponentApi;
+export default ComponentApiSetState;

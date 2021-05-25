@@ -3,12 +3,13 @@ import ReactDOM from 'react-dom';
 import './index.css';
 //import App from './App';
 //import Stateless from './Stateless';
-import Statefull from './Statefull';
+//import Statefull from './Statefull';
+import State from './State';
 import reportWebVitals from './reportWebVitals';
 
 ReactDOM.render(
   <React.StrictMode>
-   <Statefull />
+   <State />
   </React.StrictMode>,
   document.getElementById('root')
 );

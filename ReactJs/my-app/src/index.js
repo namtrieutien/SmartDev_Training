@@ -4,12 +4,14 @@ import './index.css';
 //import App from './App';
 //import Stateless from './Stateless';
 //import Statefull from './Statefull';
-import State from './State';
+//import State from './State';
+import StateProps from './StateProps';
+
 import reportWebVitals from './reportWebVitals';
 
 ReactDOM.render(
   <React.StrictMode>
-   <State />
+   <StateProps />
   </React.StrictMode>,
   document.getElementById('root')
 );

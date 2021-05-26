@@ -10,13 +10,14 @@ import './index.css';
 //import ComponentApiSetState from './ComponentApiSetState';
 //import ComponentApiForceUpdate from './ComponentApiForceUpdate';
 //import ComponentApiFindDOMNode from './ComponentApiFindDOMNode';
-import ReactHookuseState from './ReactHookuseState';
+//import ReactHookuseState from './ReactHookuseState';
+import ReactHookuseEffect from './ReactHookuseEffect';
 
 import reportWebVitals from './reportWebVitals';
 
 ReactDOM.render(
   <React.StrictMode>
-   <ReactHookuseState />
+   <ReactHookuseEffect />
   </React.StrictMode>,
   document.getElementById('root')
 );

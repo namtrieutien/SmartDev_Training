@@ -20,6 +20,11 @@ ReactDOM.render(
   document.getElementById('root')
 );
 
+/*
+setTimeout(() => {
+  ReactDOM.unmountComponentAtNode(document.getElementById('root'));}, 10000);
+*/
+
 
 
 // If you want to start measuring performance in your app, pass a function

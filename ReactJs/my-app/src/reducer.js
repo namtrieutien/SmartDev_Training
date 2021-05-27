@@ -1,4 +1,10 @@
-import { INIT_STATE, GET_POST_LIST, GET_POST_LIST_SUCCESS } from "./constant";
+import { GET_POST_LIST, GET_POST_LIST_SUCCESS } from "./constant";
+
+const INIT_STATE = {
+    posts: [],
+    load: false,
+  };
+  
 
 const postsReducers = (state = INIT_STATE, action) =>{
     switch(action.type){
@@ -8,14 +14,14 @@ const postsReducers = (state = INIT_STATE, action) =>{
                 load: true
             };
         case GET_POST_LIST_SUCCESS:
-            const data = action.payload;
+            const {data} = action.payload;
             return{
                 ...state,
                 posts: data,
                 load: false
             };
         default:
-            return;
+            return state;
 
     }
 }

@@ -1,18 +1,18 @@
 import { call, put, takeLatest } from 'redux-saga/effects';
-import {getPostData} from './postsAPI';
-import {getListPostSuccess} from './action';
+import {getPostData} from './postAPI';
+import {getPostListSuccess} from './action';
 
-function* getListPostSaga(action) {
+function* getPostListSaga(action) {
     try {
         const data = yield call(getPostData);
-        yield put(getListPostSuccess(data));
+        yield put(getPostListSuccess(data));
     } catch (error) {
         //handle error
     }
 }
 
 function* postsSaga() {
-    yield takeLatest('GET_LIST_POST', getListPostSaga);
+    yield takeLatest('GET_POST_LIST', getPostListSaga);
 }
 
 export default postsSaga;

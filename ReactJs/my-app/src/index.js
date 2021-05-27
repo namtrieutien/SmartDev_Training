@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
-//import App from './App';
+import App from './App';
 //import Stateless from './Stateless';
 //import Statefull from './Statefull';
 //import State from './State';
@@ -11,14 +11,20 @@ import './index.css';
 //import ComponentApiForceUpdate from './ComponentApiForceUpdate';
 //import ComponentApiFindDOMNode from './ComponentApiFindDOMNode';
 //import ReactHookuseState from './ReactHookuseState';
-import ReactHookuseEffect from './ReactHookuseEffect';
+//import ReactHookuseEffect from './ReactHookuseEffect';
+
+import { Provider } from 'react-redux';
+import store from './redux/store';
+
 
 import reportWebVitals from './reportWebVitals';
 
-ReactDOM.render(
-  <React.StrictMode>
-   <ReactHookuseEffect />
-  </React.StrictMode>,
+ReactDOM.render( 
+  <Provider store={store}>
+    <React.StrictMode>
+      <App />
+    </React.StrictMode>
+  </Provider>,
   document.getElementById('root')
 );
 

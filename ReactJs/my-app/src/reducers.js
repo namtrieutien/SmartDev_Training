@@ -1,4 +1,4 @@
-import { GET_POST_LIST, GET_POST_LIST_SUCCESS } from "./constant";
+import { INIT_STATE, GET_POST_LIST, GET_POST_LIST_SUCCESS } from "./constant";
 
 const postsReducers = (state = INIT_STATE, action) =>{
     switch(action.type){

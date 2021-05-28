@@ -7,18 +7,20 @@ class PracticeReduxApp extends React.Component{
 
     return (
         <div>
-            <h1>App render...</h1>
+            <h1><center>Do exercise...</center></h1>
             <table>
               <tbody>
                 <tr>
                   <th>Id</th>
                   <th>Url</th>
+                  <th>Image</th>
                 </tr>
                 {
                   data.map((my_data) => (
                     <tr>
                       <th>{my_data.id}</th>
                       <th>{my_data.url}</th>
+                      <th><img src={my_data.url}></img></th>
                     </tr>
                   ))
                 }

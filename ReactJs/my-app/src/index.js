@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
-import App from './App';
+//import App from './App';
 //import Stateless from './Stateless';
 //import Statefull from './Statefull';
 //import State from './State';
@@ -13,8 +13,10 @@ import App from './App';
 //import ReactHookuseState from './ReactHookuseState';
 //import ReactHookuseEffect from './ReactHookuseEffect';
 
+import PracticeReduxApp from './PracticeReduxApp';
+
 import { Provider } from 'react-redux';
-import store from './redux/store';
+import store from './redux_practise/store';
 
 
 import reportWebVitals from './reportWebVitals';
@@ -22,7 +24,7 @@ import reportWebVitals from './reportWebVitals';
 ReactDOM.render( 
   <Provider store={store}>
     <React.StrictMode>
-      <App />
+      <PracticeReduxApp />
     </React.StrictMode>
   </Provider>,
   document.getElementById('root')

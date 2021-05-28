@@ -1,8 +1,8 @@
 import { combineReducers } from 'redux';
-import postsReducer from '../reducer';
+import postsReducer from '../gifsReducer';
 
 const rootReducer = combineReducers({
-    posts: postsReducer,
+    data: postsReducer,
 });
 
 export default rootReducer;

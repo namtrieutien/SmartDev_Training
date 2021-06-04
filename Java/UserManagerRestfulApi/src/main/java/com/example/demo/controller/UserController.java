@@ -1,6 +1,7 @@
 package com.example.demo.controller;
 
 import com.example.demo.entity.User;
+import com.example.demo.model.dto.UserDto;
 import com.example.demo.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
@@ -16,8 +17,8 @@ public class UserController {
 
     @GetMapping("")
     public ResponseEntity<?> getListUsers(){
-        List<User> users = userService.getListUsers();
-        return ResponseEntity.ok(users);
+        List<UserDto> userDtos = userService.getListUsers();
+        return ResponseEntity.ok(userDtos);
     }
 
     @PostMapping("")

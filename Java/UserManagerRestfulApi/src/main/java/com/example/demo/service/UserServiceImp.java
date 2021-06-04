@@ -1,6 +1,8 @@
 package com.example.demo.service;
 
 import com.example.demo.entity.User;
+import com.example.demo.model.dto.UserDto;
+import com.example.demo.model.mapper.UserMapper;
 import org.springframework.stereotype.Component;
 
 import java.util.ArrayList;
@@ -15,7 +17,11 @@ public class UserServiceImp implements UserService{
     }
 
     @Override
-    public List<User> getListUsers() {
-        return users;
+    public List<UserDto> getListUsers() {
+        ArrayList<UserDto> userDtos = new ArrayList<>();
+        for(User user : users){
+            userDtos.add(UserMapper.toUserDto(user));
+        }
+        return userDtos;
     }
 }

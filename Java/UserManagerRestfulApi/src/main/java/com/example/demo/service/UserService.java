@@ -9,4 +9,5 @@ import java.util.List;
 @Service
 public interface UserService {
     List<UserDto> getListUsers();
+    UserDto getUserById(int id);
 }

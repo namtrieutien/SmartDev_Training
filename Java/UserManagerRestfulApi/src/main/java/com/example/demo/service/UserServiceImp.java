@@ -34,4 +34,15 @@ public class UserServiceImp implements UserService{
         }
         return null;
     }
+
+    @Override
+    public List<UserDto> searchUserDto(String name) {
+        List<UserDto> userDtos = new ArrayList<>();
+        for(User user: users){
+            if(user.getName().contains(name)){
+                userDtos.add(UserMapper.toUserDto(user));
+            }
+        }
+        return userDtos;
+    }
 }

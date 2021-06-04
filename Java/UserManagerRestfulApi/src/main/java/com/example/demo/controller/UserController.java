@@ -28,6 +28,12 @@ public class UserController {
         return ResponseEntity.ok(userDtos);
     }
 
+    @GetMapping("/search")
+    public ResponseEntity<?> searchUser(@RequestParam(name = "keyword", required = false, defaultValue = "") String name){
+        List<UserDto> userDtos = userService.searchUserDto(name);
+        return ResponseEntity.ok(userDtos);
+    }
+
     @PostMapping("")
     public ResponseEntity<?> createUser(){
         return null;

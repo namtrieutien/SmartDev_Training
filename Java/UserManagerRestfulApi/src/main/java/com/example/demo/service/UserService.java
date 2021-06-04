@@ -10,4 +10,5 @@ import java.util.List;
 public interface UserService {
     List<UserDto> getListUsers();
     UserDto getUserById(int id);
+    List<UserDto> searchUserDto(String name);
 }

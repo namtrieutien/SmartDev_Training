@@ -1,6 +1,7 @@
 package com.example.demo.service;
 
 import com.example.demo.entity.User;
+import com.example.demo.exception.NotFoundException;
 import com.example.demo.model.dto.UserDto;
 import com.example.demo.model.mapper.UserMapper;
 import org.springframework.stereotype.Component;
@@ -32,7 +33,8 @@ public class UserServiceImp implements UserService{
                return UserMapper.toUserDto(user);
             }
         }
-        return null;
+
+        throw new NotFoundException("User không tồn tại");
     }
 
     @Override

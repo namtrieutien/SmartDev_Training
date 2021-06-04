@@ -8,14 +8,18 @@ import org.springframework.context.ConfigurableApplicationContext;
 import org.springframework.context.annotation.ComponentScan;
 
 @ComponentScan("com.example.demo.other_packet")
+@ComponentScan("com.example.demo")
 @SpringBootApplication
 public class HelloSpringBootApplication {
 
 	public static void main(String[] args) {
 		ConfigurableApplicationContext applicationContext = SpringApplication.run(HelloSpringBootApplication.class, args);
 
-		Bikini bikini = applicationContext.getBean(Bikini.class);
-		System.out.println("Instance: " + bikini);
+		GirlFriend girlFriend = applicationContext.getBean(GirlFriend.class);
+		System.out.println("Instance girlFriend: " + girlFriend);
+		System.out.println("Instance girlFriend.dress: " + girlFriend.dress);
+		girlFriend.dress.wear();
+
 
 	}
 

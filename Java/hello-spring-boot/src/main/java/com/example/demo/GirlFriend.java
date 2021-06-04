@@ -1,27 +1,28 @@
 package com.example.demo;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.stereotype.Component;
 
 @Component
 public class GirlFriend {
     @Autowired
-    public Dress dress;
+    @Qualifier("dress")
+    public Outfit outfit;
 
     public GirlFriend() {
     }
 
-    public GirlFriend(Dress dress) {
-        this.dress = dress;
+    public GirlFriend(Outfit outfit) {
+        this.outfit = outfit;
     }
 
-    public Dress getDress() {
-        return dress;
+    public Outfit getOutfit() {
+        return outfit;
     }
 
-
-    public void setDress(Dress dress) {
-        this.dress = dress;
+    public void setOutfit(Outfit outfit) {
+        this.outfit = outfit;
     }
 }

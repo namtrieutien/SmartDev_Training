@@ -17,11 +17,11 @@ public class HelloSpringBootApplication {
 	public static void main(String[] args) {
 		ConfigurableApplicationContext applicationContext = SpringApplication.run(HelloSpringBootApplication.class, args);
 
-		Dress dress1 = applicationContext.getBean(Dress.class);
-		Dress dress2 = applicationContext.getBean(Dress.class);
+		GirlFriend girlFriend = applicationContext.getBean(GirlFriend.class);
 
-		System.out.println("Dress 1: " + dress1);
-		System.out.println("Dress 2: " + dress2);
+		System.out.println("girlFriend: " + girlFriend);
+		System.out.println("girlFriend outfit: " + girlFriend.getOutfit());
+
 	}
 
 }

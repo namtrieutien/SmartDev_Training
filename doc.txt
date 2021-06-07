@@ -6,3 +6,5 @@ Hôm  nay mọi người vào 3 flatform  học lập trình này coi qua trư�
 
 React: https://docs.google.com/document/d/1JhDhL0Ff9RuQPnQgg8CQ9TQsj8GD3g0yw3LYFiquGsk/edit
 Spring Core + Spring Boots: https://docs.google.com/spreadsheets/d/1kFHqmscyqD6FQw6bgLv-f0wxKZauQ7_nao1ntw-GViI/edit#gid=0
+
+string data jpa: https://techmaster.vn/posts/36274/huong-dan-su-dung-jpa-va-hibernate-bang-spring-boot-data-jpa-phan-1

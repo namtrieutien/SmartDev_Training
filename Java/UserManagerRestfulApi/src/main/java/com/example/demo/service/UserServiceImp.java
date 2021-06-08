@@ -4,21 +4,24 @@ import com.example.demo.entity.User;
 import com.example.demo.exception.NotFoundException;
 import com.example.demo.model.dto.UserDto;
 import com.example.demo.model.mapper.UserMapper;
+import com.example.demo.repository.UserRepository;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Optional;
 
 @Component
 public class UserServiceImp implements UserService{
-    private static ArrayList<User> users = new ArrayList<>();
-    static {
-        users.add(new User(1,"namtt007","nam@gmail.com", "0938001142", "avatar_namtt007", "password_namtt007"));
-        users.add(new User(2,"weedsquiet","weedsquiet@gmail.com", "0935078541", "avatar_weedsquiet", "password_weedsquiet"));
-    }
+    @Autowired
+    private UserRepository userRepository;
 
     @Override
     public List<UserDto> getListUsers() {
+        List<User> users = (List<User>) userRepository.findAll();
+
         ArrayList<UserDto> userDtos = new ArrayList<>();
         for(User user : users){
             userDtos.add(UserMapper.toUserDto(user));
@@ -28,23 +31,48 @@ public class UserServiceImp implements UserService{
 
     @Override
     public UserDto getUserById(int id) {
-        for(User user: users){
-            if(user.getId() == id){
-               return UserMapper.toUserDto(user);
-            }
-        }
+        User user =  userRepository.getUserById(id);
+        return UserMapper.toUserDto(user);
+    }
 
-        throw new NotFoundException("User không tồn tại");
+    @Transactional
+    @Override
+    public UserDto getUserByName(String name) {
+        User user = userRepository.getUserByName(name);
+        return UserMapper.toUserDto(user);
     }
 
     @Override
-    public List<UserDto> searchUserDto(String name) {
-        List<UserDto> userDtos = new ArrayList<>();
-        for(User user: users){
-            if(user.getName().contains(name)){
-                userDtos.add(UserMapper.toUserDto(user));
+    public List<UserDto> searchUser(String name) {
+        List<UserDto> userDtos = getListUsers();
+        List<UserDto> filterUserDtos = new ArrayList<>();
+        for(UserDto userDto: userDtos){
+            if(userDto.getName().contains(name)){
+                filterUserDtos.add(userDto);
             }
         }
-        return userDtos;
+        return filterUserDtos;
+    }
+
+    @Override
+    public void deleteUserById(int id) {
+        List<User> users = (List<User>) userRepository.findAll();
+        for(User user: users){
+            if(user.getId() == id){
+                userRepository.delete(user);
+            }
+        }
+    }
+
+    @Override
+    public void deleteUserByName(String name) {
+        userRepository.deleteUserByName(name);
+    }
+
+    @Override
+    public void createUserByName(String name) {
+        User user = new User();
+        user.setName(name);
+        userRepository.save(user);
     }
 }

@@ -10,5 +10,10 @@ import java.util.List;
 public interface UserService {
     List<UserDto> getListUsers();
     UserDto getUserById(int id);
-    List<UserDto> searchUserDto(String name);
+    UserDto getUserByName(String name);
+    List<UserDto> searchUser(String name);
+    void deleteUserById(int id);
+    void deleteUserByName(String name);
+
+    void createUserByName(String name);
 }

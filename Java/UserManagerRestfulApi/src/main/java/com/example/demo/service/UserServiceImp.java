@@ -57,15 +57,21 @@ public class UserServiceImp implements UserService{
     @Override
     public void deleteUserById(int id) {
         List<User> users = (List<User>) userRepository.findAll();
+        int ctDeleteUser = 0;
         for(User user: users){
             if(user.getId() == id){
                 userRepository.delete(user);
+                ctDeleteUser +=1;
             }
+        }
+        if(ctDeleteUser == 0){
+            throw new NotFoundException("Không có user id: " + id);
         }
     }
 
     @Override
     public void deleteUserByName(String name) {
+
         userRepository.deleteUserByName(name);
     }
 

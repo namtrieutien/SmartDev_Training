@@ -6,6 +6,7 @@ import com.example.demo.repository.UserRepository;
 import com.example.demo.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
+import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.ArrayList;
@@ -56,9 +57,16 @@ public class UserController {
         return null;
     }
 
-    @DeleteMapping("{id}")
-    public ResponseEntity<?> deleteUser(){
-        return null;
+    @Transactional
+    @DeleteMapping("/deleteUserById")
+    public void deleteUserById(@RequestParam("id") int id){
+        userRepository.deleteUserById(id);
+    }
+
+    @Transactional
+    @DeleteMapping("/deleteUserByName")
+    public void deleteUserByName(@RequestParam("name") String name){
+        userRepository.deleteUserByName(name);
     }
 }
 

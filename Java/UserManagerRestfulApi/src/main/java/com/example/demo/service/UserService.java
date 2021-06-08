@@ -16,4 +16,5 @@ public interface UserService {
     void deleteUserByName(String name);
 
     void createUserByName(String name);
+    void updateUserById(int id, String newName);
 }

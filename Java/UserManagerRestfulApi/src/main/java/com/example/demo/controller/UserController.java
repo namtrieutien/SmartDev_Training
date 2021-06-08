@@ -41,9 +41,11 @@ public class UserController {
         return ResponseEntity.ok(userDtos);
     }
 
-    @PutMapping("/{id}")
-    public ResponseEntity<?> updateUser(){
-        return null;
+    @Transactional
+    @PutMapping("/update-user-by-id")
+    public void updateUser(@RequestParam("id") int id, @RequestParam("name") String name){
+        System.out.println("update-user-by-id: " + id + " name: " + name);
+        userService.updateUserById(id, name);
     }
 
     @Transactional

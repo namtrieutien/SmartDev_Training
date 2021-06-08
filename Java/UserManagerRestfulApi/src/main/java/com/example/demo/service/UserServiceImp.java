@@ -81,4 +81,20 @@ public class UserServiceImp implements UserService{
         user.setName(name);
         userRepository.save(user);
     }
+
+    @Override
+    public void updateUserById(int id, String newName) {
+        List<User> users = (List<User>) userRepository.findAll();
+        int ctFoundUser = 0;
+        for(User user: users){
+            if(user.getId() == id){
+               user.setName(newName);
+               userRepository.save(user);
+                ctFoundUser +=1;
+            }
+        }
+        if(ctFoundUser == 0){
+            throw new NotFoundException("Không có user id: " + id);
+        }
+    }
 }

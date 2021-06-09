@@ -1,5 +1,6 @@
 package com.example.demo.controller;
 
+import com.example.demo.entity.Group;
 import com.example.demo.model.dto.UserDto;
 import com.example.demo.service.GamerService;
 import com.example.demo.service.UserService;
@@ -16,5 +17,10 @@ public class GameController {
     @Autowired
     private GamerService gamerService;
 
+    @GetMapping("/getInfoGroup/{id}")
+    public String getInfoGroupByGameId(@PathVariable("id") int id){
+        String groupName = gamerService.getInfoGroupByGameId(id);
+        return gamerService.getInfoGroupByGameId(id);
+    }
 }
 
